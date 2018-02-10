@@ -1,0 +1,23 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/game/game.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/res/res.js",
+		"promise/bin/promise.js"
+	],
+	"game": [
+		"bin-debug/Util.js",
+		"bin-debug/game/ScoreTip.js",
+		"bin-debug/game/AwardGoods.js",
+		"bin-debug/game/Bag.js",
+		"bin-debug/game/GameEvent.js",
+		"bin-debug/Main.js",
+		"bin-debug/game/Sound.js",
+		"bin-debug/game/TimeCountDown.js",
+		"bin-debug/page/GamePage.js",
+		"bin-debug/page/HomePage.js",
+		"bin-debug/page/LoadingUI.js"
+	]
+}
