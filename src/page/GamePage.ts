@@ -60,7 +60,7 @@ module page {
 		// 开始游戏
 		private startGame(): void {
 			this.timer = setInterval(this.countDown(), 1000);
-			this.timer2 = setInterval(this.loop(), 1000);
+			this.timer2 = setInterval(this.loop(), 200);
 			this.addEventListener(game.GameEvent.DROP_END, this.delRedPack, this);
 			this.addEventListener(egret.Event.ENTER_FRAME, this.checkHit, this);
 		}

@@ -8,12 +8,12 @@
 		"promise/bin/promise.js"
 	],
 	"game": [
+		"bin-debug/Main.js",
 		"bin-debug/Util.js",
-		"bin-debug/game/ScoreTip.js",
 		"bin-debug/game/AwardGoods.js",
 		"bin-debug/game/Bag.js",
 		"bin-debug/game/GameEvent.js",
-		"bin-debug/Main.js",
+		"bin-debug/game/ScoreTip.js",
 		"bin-debug/game/Sound.js",
 		"bin-debug/game/TimeCountDown.js",
 		"bin-debug/page/GamePage.js",
