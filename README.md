@@ -3,6 +3,13 @@
 
 图片资源均来自[北京网田科技发展有限公司](http://wangtiansoft.com)。
 
+# start
+首先安装egret 开发环境
+dev:    egret startserver ./ -a
+build:  egret publish ./
+
+更多命令细节可以直接看官网或者 egret --help
+
 # todo
 - 概率生成不同的红包
 - 增加游戏结束提示
