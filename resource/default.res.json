@@ -1,258 +1,263 @@
 {
-	"groups":[
+	"groups": [
 		{
-			"keys":"bg_game_jpg,bg_homepage_jpg,btn_start_png,icon_music_png,icon_music_off_png,base_bgm_mp3,red_continue_png,pic_redpacket_png,pic_fudai_png,bg_countdown_png",
-			"name":"preload"
+			"keys": "bg_game_jpg,bg_homepage_jpg,btn_start_png,icon_music_png,icon_music_off_png,base_bgm_mp3,red_continue_png,pic_redpacket_png,pic_fudai_png,bg_countdown_png,pic_candy1_png,pic_candy2_png,popup_congratulation_png,bg_opacity_png,btn_submit_png",
+			"name": "preload"
 		},
 		{
-			"keys":"icon_loading_fudai_png,light_png,pic_candy3_png,pic_fudai_png,pic_redpacket_png,pic_candy1_png,pic_candy2_png,bg_game_jpg",
-			"name":"game"
+			"keys": "icon_loading_fudai_png,light_png,pic_candy3_png,pic_fudai_png,pic_redpacket_png,pic_candy1_png,pic_candy2_png,bg_game_jpg",
+			"name": "game"
 		},
 		{
-			"keys":"line_progressbar_png,text_loading_png,bg_loading_progressbar_png",
-			"name":"load"
+			"keys": "line_progressbar_png,text_loading_png,bg_loading_progressbar_png",
+			"name": "load"
 		}
 	],
-	"resources":[
+	"resources": [
 		{
-			"name":"bg_countdown_png",
-			"type":"image",
-			"url":"images/bg_countdown.png"
+			"url": "images/bg_countdown.png",
+			"type": "image",
+			"name": "bg_countdown_png"
 		},
 		{
-			"name":"bg_game_jpg",
-			"type":"image",
-			"url":"images/bg_game.jpg"
+			"url": "images/bg_game.jpg",
+			"type": "image",
+			"name": "bg_game_jpg"
 		},
 		{
-			"name":"bg_homepage_jpg",
-			"type":"image",
-			"url":"images/bg_homepage.jpg"
+			"url": "images/bg_homepage.jpg",
+			"type": "image",
+			"name": "bg_homepage_jpg"
 		},
 		{
-			"name":"bg_loading_progressbar_png",
-			"type":"image",
-			"url":"images/bg_loading_progressbar.png"
+			"url": "images/bg_loading_progressbar.png",
+			"type": "image",
+			"name": "bg_loading_progressbar_png"
 		},
 		{
-			"name":"btn_start_png",
-			"type":"image",
-			"url":"images/btn_start.png"
+			"url": "images/btn_start.png",
+			"type": "image",
+			"name": "btn_start_png"
 		},
 		{
-			"name":"fire_png",
-			"type":"image",
-			"url":"images/fire.png"
+			"url": "images/fire.png",
+			"type": "image",
+			"name": "fire_png"
 		},
 		{
-			"name":"gameRuleText_png",
-			"type":"image",
-			"url":"images/gameRuleText.png"
+			"url": "images/gameRuleText.png",
+			"type": "image",
+			"name": "gameRuleText_png"
 		},
 		{
-			"name":"game_direction_png",
-			"type":"image",
-			"url":"images/game_direction.png"
+			"url": "images/game_direction.png",
+			"type": "image",
+			"name": "game_direction_png"
 		},
 		{
-			"name":"icon_loading_fudai_png",
-			"type":"image",
-			"url":"images/icon_loading_fudai.png"
+			"url": "images/icon_loading_fudai.png",
+			"type": "image",
+			"name": "icon_loading_fudai_png"
 		},
 		{
-			"name":"icon_music_png",
-			"type":"image",
-			"url":"images/icon_music.png"
+			"url": "images/icon_music.png",
+			"type": "image",
+			"name": "icon_music_png"
 		},
 		{
-			"name":"icon_music_off_png",
-			"type":"image",
-			"url":"images/icon_music_off.png"
+			"url": "images/icon_music_off.png",
+			"type": "image",
+			"name": "icon_music_off_png"
 		},
 		{
-			"name":"light_png",
-			"type":"image",
-			"url":"images/light.png"
+			"url": "images/light.png",
+			"type": "image",
+			"name": "light_png"
 		},
 		{
-			"name":"line_progressbar_png",
-			"type":"image",
-			"url":"images/line_progressbar.png"
+			"url": "images/line_progressbar.png",
+			"type": "image",
+			"name": "line_progressbar_png"
 		},
 		{
-			"name":"moneyNumber_png",
-			"type":"image",
-			"url":"images/moneyNumber.png"
+			"url": "images/moneyNumber.png",
+			"type": "image",
+			"name": "moneyNumber_png"
 		},
 		{
-			"name":"no_money_png",
-			"type":"image",
-			"url":"images/no_money.png"
+			"url": "images/no_money.png",
+			"type": "image",
+			"name": "no_money_png"
 		},
 		{
-			"name":"no_money_last_png",
-			"type":"image",
-			"url":"images/no_money_last.png"
+			"url": "images/no_money_last.png",
+			"type": "image",
+			"name": "no_money_last_png"
 		},
 		{
-			"name":"no_start_png",
-			"type":"image",
-			"url":"images/no_start.png"
+			"url": "images/no_start.png",
+			"type": "image",
+			"name": "no_start_png"
 		},
 		{
-			"name":"people_more_png",
-			"type":"image",
-			"url":"images/people_more.png"
+			"url": "images/people_more.png",
+			"type": "image",
+			"name": "people_more_png"
 		},
 		{
-			"name":"pic_candy3_png",
-			"type":"image",
-			"url":"images/pic_candy3.png"
+			"url": "images/pic_candy3.png",
+			"type": "image",
+			"name": "pic_candy3_png"
 		},
 		{
-			"name":"pic_fudai_png",
-			"type":"image",
-			"url":"images/pic_fudai.png"
+			"url": "images/pic_fudai.png",
+			"type": "image",
+			"name": "pic_fudai_png"
 		},
 		{
-			"name":"pic_redpacket_png",
-			"type":"image",
-			"url":"images/pic_redpacket.png"
+			"url": "images/pic_redpacket.png",
+			"type": "image",
+			"name": "pic_redpacket_png"
 		},
 		{
-			"name":"popup_congratulation_png",
-			"type":"image",
-			"url":"images/popup_congratulation.png"
+			"url": "images/popup_congratulation.png",
+			"type": "image",
+			"name": "popup_congratulation_png"
 		},
 		{
-			"name":"pupop_png",
-			"type":"image",
-			"url":"images/pupop.png"
+			"url": "images/pupop.png",
+			"type": "image",
+			"name": "pupop_png"
 		},
 		{
-			"name":"red_continue_png",
-			"type":"image",
-			"url":"images/red_continue.png"
+			"url": "images/red_continue.png",
+			"type": "image",
+			"name": "red_continue_png"
 		},
 		{
-			"name":"second_png",
-			"type":"image",
-			"url":"images/second.png"
+			"url": "images/second.png",
+			"type": "image",
+			"name": "second_png"
 		},
 		{
-			"name":"secondNum_png",
-			"type":"image",
-			"url":"images/secondNum.png"
+			"url": "images/secondNum.png",
+			"type": "image",
+			"name": "secondNum_png"
 		},
 		{
-			"name":"serverException_png",
-			"type":"image",
-			"url":"images/serverException.png"
+			"url": "images/serverException.png",
+			"type": "image",
+			"name": "serverException_png"
 		},
 		{
-			"name":"text_congratulation_png",
-			"type":"image",
-			"url":"images/text_congratulation.png"
+			"url": "images/text_congratulation.png",
+			"type": "image",
+			"name": "text_congratulation_png"
 		},
 		{
-			"name":"text_loading_png",
-			"type":"image",
-			"url":"images/text_loading.png"
+			"url": "images/text_loading.png",
+			"type": "image",
+			"name": "text_loading_png"
 		},
 		{
-			"name":"thanks_join_png",
-			"type":"image",
-			"url":"images/thanks_join.png"
+			"url": "images/thanks_join.png",
+			"type": "image",
+			"name": "thanks_join_png"
 		},
 		{
-			"name":"yuan_png",
-			"type":"image",
-			"url":"images/yuan.png"
+			"url": "images/yuan.png",
+			"type": "image",
+			"name": "yuan_png"
 		},
 		{
-			"name":"base_bgm_mp3",
-			"type":"sound",
-			"url":"bgm/base_bgm.mp3"
+			"url": "bgm/base_bgm.mp3",
+			"type": "sound",
+			"name": "base_bgm_mp3"
 		},
 		{
-			"name":"pic_candy1_png",
-			"type":"image",
-			"url":"images/pic_candy1.png"
+			"url": "images/pic_candy1.png",
+			"type": "image",
+			"name": "pic_candy1_png"
 		},
 		{
-			"name":"pic_candy2_png",
-			"type":"image",
-			"url":"images/pic_candy2.png"
+			"url": "images/pic_candy2.png",
+			"type": "image",
+			"name": "pic_candy2_png"
 		},
 		{
-			"name":"alert_game_end_png",
-			"type":"image",
-			"url":"images/alert_game_end.png"
+			"url": "images/alert_game_end.png",
+			"type": "image",
+			"name": "alert_game_end_png"
 		},
 		{
-			"name":"alert_area_err_png",
-			"type":"image",
-			"url":"images/alert_area_err.png"
+			"url": "images/alert_area_err.png",
+			"type": "image",
+			"name": "alert_area_err_png"
 		},
 		{
-			"name":"alert_bg_1_png",
-			"type":"image",
-			"url":"images/alert_bg_1.png"
+			"url": "images/alert_bg_1.png",
+			"type": "image",
+			"name": "alert_bg_1_png"
 		},
 		{
-			"name":"bg_redpacket_png",
-			"type":"image",
-			"url":"images/bg_redpacket.png"
+			"url": "images/bg_redpacket.png",
+			"type": "image",
+			"name": "bg_redpacket_png"
 		},
 		{
-			"name":"btn_submit_png",
-			"type":"image",
-			"url":"images/btn_submit.png"
+			"url": "images/btn_submit.png",
+			"type": "image",
+			"name": "btn_submit_png"
 		},
 		{
-			"name":"btn_confirm_png",
-			"type":"image",
-			"url":"images/btn_confirm.png"
+			"url": "images/btn_confirm.png",
+			"type": "image",
+			"name": "btn_confirm_png"
 		},
 		{
-			"name":"cd0_png",
-			"type":"image",
-			"url":"images/cd0.png"
+			"url": "images/cd0.png",
+			"type": "image",
+			"name": "cd0_png"
 		},
 		{
-			"name":"cd1_png",
-			"type":"image",
-			"url":"images/cd1.png"
+			"url": "images/cd1.png",
+			"type": "image",
+			"name": "cd1_png"
 		},
 		{
-			"name":"cd_bg_png",
-			"type":"image",
-			"url":"images/cd_bg.png"
+			"url": "images/cd_bg.png",
+			"type": "image",
+			"name": "cd_bg_png"
 		},
 		{
-			"name":"cd2_png",
-			"type":"image",
-			"url":"images/cd2.png"
+			"url": "images/cd2.png",
+			"type": "image",
+			"name": "cd2_png"
 		},
 		{
-			"name":"cd3_png",
-			"type":"image",
-			"url":"images/cd3.png"
+			"url": "images/cd3.png",
+			"type": "image",
+			"name": "cd3_png"
 		},
 		{
-			"name":"alert_activated_end_png",
-			"type":"image",
-			"url":"images/alert_activated_end.png"
+			"url": "images/alert_activated_end.png",
+			"type": "image",
+			"name": "alert_activated_end_png"
 		},
 		{
-			"name":"alert_no_auth_png",
-			"type":"image",
-			"url":"images/alert_no_auth.png"
+			"url": "images/alert_no_auth.png",
+			"type": "image",
+			"name": "alert_no_auth_png"
 		},
 		{
-			"name":"alert_no_chance_png",
-			"type":"image",
-			"url":"images/alert_no_chance.png"
+			"url": "images/alert_no_chance.png",
+			"type": "image",
+			"name": "alert_no_chance_png"
+		},
+		{
+			"url": "images/bg_opacity.png",
+			"type": "image",
+			"name": "bg_opacity_png"
 		}
 	]
 }

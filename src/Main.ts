@@ -12,6 +12,7 @@ class Main extends egret.DisplayObjectContainer {
     private widthRatio: number = 1;
     private heightRatio: number = 1;
     private soundBtn: Sound = null;
+    private alert: game.Alert;
 
     public constructor() {
         super();
@@ -117,6 +118,10 @@ class Main extends egret.DisplayObjectContainer {
         this.stageW = this.stage.stageWidth;
         this.widthRatio = this.stageW / 640;
         this.heightRatio = this.stageH / 1136;
+        Util.widthRatio = this.widthRatio;
+        Util.heightRatio = this.heightRatio;
+        Util.stageH = this.stageH;
+        Util.stageW = this.stageW;
         this.initGameScene();
     }
 
@@ -133,13 +138,17 @@ class Main extends egret.DisplayObjectContainer {
         this.soundBtn.setHeight(48 * this.heightRatio);
         this.soundBtn.setX((556 + 24) * this.heightRatio);
         this.soundBtn.setY((160 + 24) * this.widthRatio);
-        
+
         this.homePage = new page.HomePage(this.stageW, this.stageH, this.widthRatio, this.heightRatio);
         this.homePage.addEventListener(game.GameEvent.START_GAME, this.control, this)
         this.stage.addChild(this.homePage);
         this.stage.addChild(this.soundBtn);
 
         this.stage.setChildIndex(this.soundBtn, 100);
+
+        this.alert = new game.Alert();
+        this.stage.addChild(this.alert);
+        this.alert.addEventListener(game.GameEvent.ALERT_BTN_CLICK, this.handleAlertSubmit, this);
     }
 
     private control(evt: egret.Event) {
@@ -149,5 +158,8 @@ class Main extends egret.DisplayObjectContainer {
             this.stage.removeChild(this.homePage);
             this.stage.setChildIndex(this.soundBtn, 100);
         }
+    }
+    private handleAlertSubmit(evt: game.GameEvent) {
+        this.stage.removeChild(this.alert);
     }
 }
