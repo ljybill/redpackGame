@@ -132,7 +132,6 @@ class Main extends egret.DisplayObjectContainer {
 
 
     private initGameScene(): void {
-
         this.soundBtn = new Sound();
         this.soundBtn.setWidth(48 * this.widthRatio);
         this.soundBtn.setHeight(48 * this.heightRatio);
@@ -140,26 +139,42 @@ class Main extends egret.DisplayObjectContainer {
         this.soundBtn.setY((160 + 24) * this.widthRatio);
 
         this.homePage = new page.HomePage(this.stageW, this.stageH, this.widthRatio, this.heightRatio);
-        this.homePage.addEventListener(game.GameEvent.START_GAME, this.control, this)
+        this.homePage.addEventListener(game.GameEvent.START_GAME, this.control, this);
         this.stage.addChild(this.homePage);
         this.stage.addChild(this.soundBtn);
 
         this.stage.setChildIndex(this.soundBtn, 100);
-
-        this.alert = new game.Alert();
-        this.stage.addChild(this.alert);
-        this.alert.addEventListener(game.GameEvent.ALERT_BTN_CLICK, this.handleAlertSubmit, this);
     }
 
-    private control(evt: egret.Event) {
+    private control(evt: game.GameEvent) {
         if (evt.type === game.GameEvent.START_GAME) {
             this.gamePage = new page.GamePage(this.stageW, this.stageH, this.widthRatio, this.heightRatio);
             this.stage.addChild(this.gamePage);
+            this.gamePage.addEventListener(game.GameEvent.END_GAME, this.control, this);
             this.stage.removeChild(this.homePage);
             this.stage.setChildIndex(this.soundBtn, 100);
         }
+        if (evt.type === game.GameEvent.END_GAME) {
+            this.alert = new game.Alert();
+            this.stage.addChild(this.alert);
+            this.alert.addEventListener(game.GameEvent.ALERT_BTN_CLICK, this.handleAlertSubmit, this);
+        }
     }
     private handleAlertSubmit(evt: game.GameEvent) {
-        this.stage.removeChild(this.alert);
+        if (evt.type === game.GameEvent.ALERT_BTN_CLICK) {
+            switch (evt.willAction) {
+                case 'reset': {
+                    this.resetGame();
+                }
+            }
+        }
+    }
+
+    private resetGame() {
+        this.gamePage = null;
+        this.homePage = null;
+        this.soundBtn = null;
+        this.alert = null;
+        this.initGameScene();
     }
 }

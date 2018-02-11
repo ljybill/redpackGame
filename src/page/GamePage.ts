@@ -2,7 +2,7 @@ module page {
 	export class GamePage extends egret.Sprite {
 		private timer: number;
 		private timer2: number;
-		private gameTimeLength: number = 30;
+		private gameTimeLength: number = 10;
 		private redPackList: game.AwardGoods[];
 		private bag: game.Bag;
 		private scoreText: egret.TextField;
@@ -34,7 +34,7 @@ module page {
 			this.addChild(this.bag);
 
 			// 倒计时初始化
-			this.timeCountDown = new game.TimeCountDown();
+			this.timeCountDown = new game.TimeCountDown(this.gameTimeLength);
 			this.timeCountDown.setRect(105 * Util.widthRatio, 113 * Util.heightRatio, 68 * Util.heightRatio);
 			this.timeCountDown.x = 28 * Util.widthRatio;
 			this.timeCountDown.y = 177 * Util.heightRatio;
@@ -62,6 +62,10 @@ module page {
 				this.gameTimeLength--;
 				this.timeCountDown.setTime(this.gameTimeLength);
 				if (!this.gameTimeLength) {
+					let gameEvent = egret.Event.create(game.GameEvent, game.GameEvent.END_GAME, false, false);
+					this.dispatchEvent(gameEvent);
+					egret.Event.release(gameEvent);
+
 					clearInterval(this.timer2);
 					clearInterval(this.timer);
 				}
@@ -73,6 +77,11 @@ module page {
 				let redpack = new game.AwardGoods(86, 86);
 				this.redPackList.push(redpack);
 				this.addChild(redpack);
+				if (Util.getRandom(1, 10) % 9 === 0) {
+					let redpack = new game.AwardGoods(86, 86);
+					this.redPackList.push(redpack);
+					this.addChild(redpack);
+				}
 			}.bind(this);
 		}
 		// 监听物品掉落到最下面的回调

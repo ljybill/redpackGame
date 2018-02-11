@@ -2,9 +2,11 @@ module game {
 	export class TimeCountDown extends egret.Sprite {
 		private bg: egret.Bitmap;
 		private time: egret.TextField;
+		private gameTimeLength: number;
 
-		public constructor() {
+		public constructor(gameTimeLength: number) {
 			super();
+			this.gameTimeLength = gameTimeLength;
 			this.init();
 		}
 		private init() {
@@ -12,7 +14,7 @@ module game {
 			this.addChild(this.bg);
 
 			this.time = new egret.TextField();
-			this.time.text = '60秒';
+			this.setTime(this.gameTimeLength);
 			this.time.size = 24;
 			this.time.textColor = 0xffffff;
 			this.time.textAlign = 'center';

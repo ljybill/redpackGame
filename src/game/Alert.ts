@@ -1,12 +1,17 @@
 module game {
 	export class Alert extends egret.Sprite {
+		public static TYPE_GAME_END: number = 1;
+
+		private type: number;
 		private maskRect: egret.Bitmap;
 		private bg: egret.Bitmap;
 		private text: egret.TextField;
 		private btn: egret.Bitmap;
+		private enterTween: egret.Tween;
 
-		public constructor() {
+		public constructor(type: number = game.Alert.TYPE_GAME_END) {
 			super();
+			this.type = type
 
 			this.maskRect = Util.createBitmapByName('bg_opacity_png');
 			this.maskRect.width = Util.stageW;
@@ -33,9 +38,20 @@ module game {
 			this.addChild(this.btn);
 			this.btn.touchEnabled = true;
 			this.btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.popSubmit, this);
+
+			this.alpha = 0;
+			this.enterTween = egret.Tween.get(this);
+			this.enterTween.to({
+				alpha: 1
+			}, 300);
 		}
 		private popSubmit() {
 			let gameEvent = egret.Event.create(game.GameEvent, game.GameEvent.ALERT_BTN_CLICK, false, false);
+			switch (this.type) {
+				case game.Alert.TYPE_GAME_END: {
+					gameEvent.willAction = 'reset';
+				}
+			}
 			this.dispatchEvent(gameEvent);
 			egret.Event.release(gameEvent);
 		}
