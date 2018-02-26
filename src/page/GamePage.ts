@@ -1,13 +1,17 @@
 module page {
 	export class GamePage extends egret.Sprite {
+		public static STATUS_RUNNING = 'running';
+		public static STATUS_END = 'end';
+
 		private timer: number;
 		private timer2: number;
-		private gameTimeLength: number = 10;
-		private redPackList: game.AwardGoods[];
+		private gameTimeLength: number = 20;
+		private redPackList: game.RedPack[];
 		private bag: game.Bag;
 		private scoreText: egret.TextField;
 		private timeCountDown: game.TimeCountDown;
 		private scoreTip: game.ScoreTip;
+		private status: string;
 
 		public constructor(width: number, height: number, widthRatio: number, heightRatio: number) {
 			super();
@@ -51,8 +55,9 @@ module page {
 		}
 		// 开始游戏
 		private startGame(): void {
+			this.status = page.GamePage.STATUS_RUNNING;
 			this.timer = setInterval(this.countDown(), 1000);
-			this.timer2 = setInterval(this.loop(), 200);
+			this.timer2 = setInterval(this.loop(), 500);
 			this.addEventListener(game.GameEvent.DROP_END, this.delRedPack, this);
 			this.addEventListener(egret.Event.ENTER_FRAME, this.checkHit, this);
 		}
@@ -62,23 +67,18 @@ module page {
 				this.gameTimeLength--;
 				this.timeCountDown.setTime(this.gameTimeLength);
 				if (!this.gameTimeLength) {
-					let gameEvent = egret.Event.create(game.GameEvent, game.GameEvent.END_GAME, false, false);
-					this.dispatchEvent(gameEvent);
-					egret.Event.release(gameEvent);
-
-					clearInterval(this.timer2);
-					clearInterval(this.timer);
+					this.endGame();
 				}
 			}.bind(this);
 		}
 		// 生成红包循环
 		private loop(): void {
 			return function () {
-				let redpack = new game.AwardGoods(86, 86);
+				let redpack = new game.RedPack(86, 86);
 				this.redPackList.push(redpack);
 				this.addChild(redpack);
 				if (Util.getRandom(1, 10) % 9 === 0) {
-					let redpack = new game.AwardGoods(86, 86);
+					let redpack = new game.RedPack(86, 86);
 					this.redPackList.push(redpack);
 					this.addChild(redpack);
 				}
@@ -95,18 +95,34 @@ module page {
 		}
 		// 每帧事件，检测是否碰撞
 		private checkHit(evt: egret.Event) {
-			// console.log(`福袋位置${this.bag.x} ${this.bag.y}`);
+			if (this.status === page.GamePage.STATUS_END) {
+				return;
+			}
 			for (let i = 0; i < this.redPackList.length; i++) {
 				// console.log(`红包${i}位置 ${this.redPackList[i].x} ${this.redPackList[i].y}`);
-				if (this.redPackList[i].hitTestPoint(this.bag.x - this.bag.width / 4, this.bag.y - this.bag.height / 2) || this.redPackList[i].hitTestPoint(this.bag.x + this.bag.width / 4, this.bag.y - this.bag.height / 2)) {
+				if (this.redPackList[i].hitTestPoint(this.bag.x - this.bag.width / 4, this.bag.y - this.bag.height / 2)
+					|| this.redPackList[i].hitTestPoint(this.bag.x + this.bag.width / 4, this.bag.y - this.bag.height / 2)) {
 					this.removeChild(this.redPackList[i]);
-					if (this.redPackList[i].type === game.AwardGoods.TYPE_REDPACK) {
+					if (this.redPackList[i].type === game.RedPack.TYPE_REDPACK) {
 						console.log('+1分');
 						this.scoreTip.increase();
+					} else if (this.redPackList[i].type === game.RedPack.TYPE_BOOM) {
+						console.log('游戏结束');
+						this.endGame();
 					}
 					this.redPackList.splice(i, 1);
 				}
 			}
+		}
+		// 结束游戏
+		private endGame() {
+			this.status = page.GamePage.STATUS_END;
+			let gameEvent = egret.Event.create(game.GameEvent, game.GameEvent.END_GAME, false, false);
+			this.dispatchEvent(gameEvent);
+			egret.Event.release(gameEvent);
+
+			clearInterval(this.timer2);
+			clearInterval(this.timer);
 		}
 	}
 }

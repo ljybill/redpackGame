@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_game_jpg,bg_homepage_jpg,btn_start_png,icon_music_png,icon_music_off_png,base_bgm_mp3,red_continue_png,pic_redpacket_png,pic_fudai_png,bg_countdown_png,pic_candy1_png,pic_candy2_png,popup_congratulation_png,bg_opacity_png,btn_submit_png",
+			"keys": "bg_game_jpg,bg_homepage_jpg,btn_start_png,icon_music_png,icon_music_off_png,base_bgm_mp3,red_continue_png,pic_redpacket_png,pic_fudai_png,bg_countdown_png,pic_candy1_png,pic_candy2_png,popup_congratulation_png,bg_opacity_png,btn_submit_png,pic_bone_png",
 			"name": "preload"
 		},
 		{
@@ -258,6 +258,11 @@
 			"url": "images/bg_opacity.png",
 			"type": "image",
 			"name": "bg_opacity_png"
+		},
+		{
+			"name": "pic_bone_png",
+			"type": "image",
+			"url": "images/pic_bone.png"
 		}
 	]
 }
