@@ -9,11 +9,6 @@ build:  egret publish ./
 
 更多命令细节可以直接看官网或者 egret --help
 
-# 在线演示
-[在线演示地址: http://test.ljybill.com](http://test.ljybill.com) 也可以扫描下面的二维码
-
-![qcode](./git-pic/qcode.png)
-
 # todo
 - 概率生成不同的红包
 - 增加游戏结束提示
